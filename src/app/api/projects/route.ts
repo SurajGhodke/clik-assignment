@@ -12,7 +12,7 @@ export async function GET() {
 export async function POST(req: Request) {
   try {
     const newProject = await req.json();
-    newProject.createdOn = new Date().toISOString().split("T")[0]; // Set createdOn date
+    newProject.createdOn = new Date().toISOString().split("T")[0];
 
     const data = fs.readFileSync(filePath, "utf8");
     const projects = JSON.parse(data);

@@ -29,18 +29,6 @@ export default function ProjectList() {
       });
   }, []);
 
-  //   useEffect(() => {
-  //     fetch("/projects.json")
-  //       .then((res) => res.json())
-  //       .then((data: Project[]) => setProjects(data))
-  //       .catch((err) => console.error("Error loading projects:", err))
-  //       .finally(() => setLoading(false));
-  //   }, []);
-
-  //   const addProject = (newProject: Project) => {
-  //     setProjects((prevProjects) => [...prevProjects, newProject]);
-  //   };
-
   const addProject = async (newProject: Project) => {
     const res = await fetch("/api/projects", {
       method: "POST",
@@ -53,6 +41,20 @@ export default function ProjectList() {
       setProjects(data.projects);
     }
   };
+
+  // WITH USESTATE
+
+  //   useEffect(() => {
+  //     fetch("/projects.json")
+  //       .then((res) => res.json())
+  //       .then((data: Project[]) => setProjects(data))
+  //       .catch((err) => console.error("Error loading projects:", err))
+  //       .finally(() => setLoading(false));
+  //   }, []);
+
+  //   const addProject = (newProject: Project) => {
+  //     setProjects((prevProjects) => [...prevProjects, newProject]);
+  //   };
 
   return (
     <div>
